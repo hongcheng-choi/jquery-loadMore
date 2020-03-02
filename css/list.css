@@ -1,0 +1,410 @@
+#home {
+	height: 100%;
+	background: #F7F7F7;
+}
+
+#loading {
+	text-align: center;
+	padding: 0.2rem 0;
+	font-size: 0.12rem;
+	color: #ADADAD;
+	background: #f7f7f7;
+}
+
+#list {
+	padding-top: 1rem;
+}
+
+section {
+	padding-top: 1rem;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/* height: 0.99rem; */
+	background: #fff;
+	z-index: 1;
+	font-size: 0;
+	/* box-shadow: 0 1px 2px #ccc; */
+	border-bottom: 1px solid #ccc;
+}
+
+header ul li {
+	display: inline-block;
+	width: 50%;
+	font-size: 0.15rem;
+	line-height: 0.45rem;
+	text-align: center;
+}
+
+header ul li .icon {
+	font-size: 0.13rem;
+	padding-left: 0.05rem;
+}
+
+header ul li .header-divider {
+	float: right;
+	color: #dcdcdc;
+}
+
+/* 竞价专区列表 */
+.content-list {
+	/* padding-top:0.5rem ; */
+	padding-bottom: 0.01rem;
+}
+
+.bid-area-list {
+	height: 1.54rem;
+	width: 100%;
+	background: #FFFFFF;
+	margin: 0.05rem 0;
+}
+
+.list-title {
+	font-size: 0.14rem;
+	display: flex;
+	justify-content: space-between;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	border-bottom: 1px solid #e5e5e5;
+	margin-left: 0.12rem;
+	padding-right: 0.12rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.list-title p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #666666;
+}
+
+.list-title p span.icon {
+	font-size: 0.13rem;
+}
+
+.list-title p img {
+	margin-right: 0.05rem;
+	width: 0.12rem;
+	height: 0.12rem;
+}
+
+.list-title a {
+	font-size: 0.12rem;
+	color: #999999;
+}
+
+.list-title a span.color_price {
+	color: #f83330;
+	font-size: 0.14rem;
+}
+
+.list-detail {
+	display: block;
+	padding: 0.11rem 0.12rem;
+}
+
+.list-image {
+	position: relative;
+	float: left;
+	width: 1.29rem;
+	height: 0.86rem;
+}
+
+.list-image img {
+	display: block;
+	height: 100%;
+	width: 100%;
+	border-radius: 0.03rem;
+}
+
+.img-border {
+	border: 0.5px solid #e5e5e5;
+}
+
+.list-content {
+	height: 0.86rem;
+	position: relative;
+	margin-left: 1.39rem;
+	display: flex;
+	flex-flow: wrap;
+}
+
+.list-content-title {
+	font-size: 0.15rem;
+	height: 0.44rem;
+	line-height: 0.21rem;
+	color: #333;
+	font-weight: 500;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.list-content-subTitle {
+	align-self: flex-end;
+	font-size: 0.14rem;
+	line-height: 0.17rem;
+	height: 0.17rem;
+	color: #999;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-top: 0.03rem;
+	width: 100%;
+}
+
+.list-content-subTitle span {
+	/* font-size: 0.08rem; */
+	padding: 0 0.05rem;
+	/* position: relative; */
+	/* top: -0.01rem; */
+	color: #bfbfbf;
+}
+
+.list-content-subTitle:last-child {
+	font-size: 0.13rem;
+}
+
+.list-content-subTitle.hot-title {
+	/* height: 20px; */
+	color: #333333;
+	font-size: 0.14rem;
+	font-weight: normal;
+}
+
+.list-content-title.hot-title {
+	height: auto;
+}
+
+.list-licensedCity {
+	position: absolute;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.4);
+	width: 100%;
+	color: #fff;
+	height: 0.2rem;
+	font-size: 0.12rem;
+	line-height: 0.2rem;
+	text-align: center;
+}
+
+.bid-on {
+	float: right;
+	background: rgba(248, 107, 33, 0.2);
+	color: #f86b0d !important;
+	border-radius: 0.03rem;
+}
+
+.bid-show {
+	float: right;
+	color: #54c89b !important;
+	border-radius: 0.03rem;
+	background: rgba(84, 800, 155, 0.2);
+}
+
+.bid-end {
+	float: right;
+	color: #666666 !important;
+	border-radius: 0.03rem;
+	background: rgba(102, 102, 102, 0.2);
+}
+
+/* 城市选择弹出层  头部 */
+popup-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #fff;
+	z-index: 1;
+	box-shadow: 0 1px 3px #ccc;
+}
+
+.content-title {
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+	color: #666666;
+	padding-left: 11px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.1rem;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	background: #FFFFFF;
+}
+
+.header a:first-child {
+	color: #F86B0D;
+	font-size: 0.14rem;
+	font-weight: bold;
+}
+
+.header a:nth-child(2) {
+	color: #F86B0D;
+	font-weight: bold;
+}
+
+/* 城市条件筛选 */
+.location-city-box {
+	height: 40px;
+	line-height: 40px;
+	background: #FFFFFF;
+	display: flex;
+	justify-content: space-between;
+}
+
+.location-city-box a:first-child {
+	color: #F86B0D;
+	font-size: 14px;
+	padding-left: 11px;
+}
+
+.location-city-box a:last-child {
+	color: #F86B0D;
+	font-size: 14px;
+	padding-right: 11px;
+}
+
+/* 城市列表 */
+.w-carShop-content {
+	background: #FFFFFF;
+	padding: 14px 2%;
+}
+
+.w-carShop-content ul li {
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	padding: 5px 1%;
+	width: 30.3%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.w-carShop-content ul li a {
+	background: #f5f5f5;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	display: inline-block;
+	width: 100%;
+	color: #999999;
+	font-size: 12px;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+}
+
+.w-carShop-content ul li a span {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: inline-block;
+	width: 100%;
+}
+
+/* 底部确定按钮 */
+.nav-bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	background: #FFFFFF;
+}
+
+.nav-bottom ul li {
+	float: left;
+	text-align: center;
+}
+
+.nav-bottom ul li:first-child {
+	width: 30%;
+}
+
+.nav-bottom ul li:first-child a {
+	font-size: 0.15rem;
+	color: #333333;
+}
+
+.nav-bottom ul li:last-child {
+	width: 70%;
+	background: #F86B0D;
+}
+
+.nav-bottom ul li:last-child a {
+	color: #FFFFFF;
+	font-size: 0.15rem;
+}
+
+.pull-loading {
+	text-align: center;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.12rem;
+	color: #adadad;
+}
+
+/* 竞价标题（今天场/明天场/后天场的标题） */
+.bid-title {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 0.45rem;
+	font-size: 0.16rem;
+	font-weight: bold;
+	padding: 0 0.15rem;
+	background: #fff;
+	color: #333333;
+	border-top: 0.08rem solid #eee;
+	overflow: hidden;
+}
+
+.bid-title-left i {
+	position: absolute;
+	left: 0;
+	top: 0.16rem;
+	display: inline-block;
+	width: 0.05rem;
+	height: 0.16rem;
+	background: #f86b0d;
+}
+
+.bid-title-left-time {
+	color: #666666;
+	font-size: 0.15rem;
+}
+
+.bid-title-right {
+	color: #333333;
+	font-size: 0.15rem;
+}
+
+.bid-title-right .icon {
+	font-size: 0.13rem;
+}
+
+.bid-title-right-num {
+	font-size: 0.17rem;
+	color: #f86b0d;
+	padding-right: 0.14rem;
+}
+
+

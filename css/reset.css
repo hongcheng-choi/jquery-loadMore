@@ -1,0 +1,206 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	font-weight: normal;
+	vertical-align: baseline;
+}
+
+/* 主体样式 */
+body {
+	/* max-width: 3.75rem; 2019.11.13*/
+	margin: 0 auto;
+	height: 100%;
+	color: #222;
+	font-size: 16px;
+	line-height: 1.6;
+	font-family: "PingFang-SC-Regular";
+	background: #FFFFFF;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	color: #333;
+}
+
+a:active {
+	color: #ff6600;
+}
+
+p {
+	color: unset;
+}
+
+i {
+	font-style: normal;
+}
+
+s {
+	text-decoration: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th,
+td {
+	vertical-align: middle;
+}
+
+/* custom */
+a {
+	outline: none;
+	color: #16418a;
+	text-decoration: none;
+	-webkit-backface-visibility: hidden;
+}
+
+a:focus {
+	outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	outline: -webkit-focus-ring-color auto 0;
+}
+
+/* 导航栏公用样式 */
+.weui-tabbar {
+	position: fixed;
+	left: 0;
+}
+
+.weui-tabbar__label {
+	font-size: 0.12rem;
+}
+
+.weui-tabbar__item.weui-bar__item--on .weui-tabbar__label {
+	color: red;
+}
+
+
+/* 2019.11.14新增 */
+/* 没有数据时候的样式 */
+.nodata {
+	text-align: center;
+	margin-top: 1.4rem;
+}
+
+.nodata img {
+	width: 1.5rem;
+}
+
+img{
+	object-fit: cover;
+}
+.nodata p {
+	font-size: 0.14rem;
+	color: #C0D3E8;
+}
+/* 弹出层的样式 */
+.weui-picker-container,.weui-picker-modal{
+	bottom: 0!important;
+}
+.weui-tabbar{
+	z-index: 9;
+}

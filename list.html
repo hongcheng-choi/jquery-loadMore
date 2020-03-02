@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="yes" name="apple-touch-fullscreen" />
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true" />
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta content="telephone=no,email=no" name="format-detection" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/weui.min-1.0.css" />
+		<link rel="stylesheet" type="text/css" href="css/weuix-1.0.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/list.css" />
+		<style type="text/css">
+			body{
+				background: #F5F5F5;
+			}
+		</style>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<title>车辆列表</title>
+	</head>
+	<body style="max-width: 7.68rem;">
+		<div id='home'>
+			<!-- 头部 -->
+			<header>
+				<ul>
+					<li class="open-popup" data-target="citySelect">
+						城市<span class="icon icon-35"></span>
+						<span class="header-divider">|</span>
+					</li>
+					<li id="timeSelect">
+						时间<span class="icon icon-35"></span>
+					</li>
+				</ul>
+				<div class="bid-title">
+					<span class="bid-title-left">
+						<i></i> 今天
+						<span class="bid-title-left-time">（10月24日）星期三</span>
+					</span>
+					<span class="bid-title-right">
+						场数:
+						<i class="bid-title-right-num">3</i>
+					</span>
+				</div>
+			</header>
+			<!-- 列表 -->
+			<div id="list"></div>
+			<div id="loading">正在加载中···</div>
+		</div>
+		<script src="js/jquery-2.1.4.js"></script>
+		<script src="js/cuscom/jquery-weui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/detailList.js"></script>
+		<script type="text/javascript">
+			var detailList = new h5Detail2list();
+			var loading = false;
+			var listnum = 0; //总加载条数
+			var num = 5 //每次加载条数
+			if ($.isEmptyObject(detailList.getLocalStorage()['extraData']) || !detailList.isBack()) {
+				//初始化
+				getList();
+			}
+			//模拟ajax数据请求
+			function getList() {
+				$.ajax({
+					url: "json/data.json",
+					type: "get",
+					dataType: 'json',
+					success: function(data) {
+						var li = '';
+						listnum = $.isEmptyObject(detailList.getLocalStorage()['extraData']) ? listnum : detailList.getLocalStorage()[
+							'extraData']['lastIndex'];
+						var data_length = data.length; //数据的总条数
+						var remainder = data_length % num; //page 是每次加载的条数，利用数据的总条数/每次加载条数 取余数
+						if (listnum <= 5 || data.length >= (num + listnum)) {
+							loading = true
+							for (i = listnum; i < (num + listnum); i++) {
+								li
+									+= '' +
+									'    <div class="bid-area-list" >' +
+									'      <div class="list-title">' +
+									'		<p>' +
+									'		  <span class="icon icon-68"></span>车辆所在地：' + data[i].city + (i + 1) +
+									'		</p>' +
+									'		<a href="javascript:;"><span class="color_price">' + data[i].money +
+									'		</span></a>' +
+									'	   </div>' +
+									'      <a href="detail.html" class="list-detail">' +
+									'		<div class="list-image">' +
+									'		 <img src="img/item_4.jpg" alt />' +
+									'		 <div class="list-licensedCity">' + data[i].status + '</div>' +
+									'		</div>' +
+									'		<div class="list-content">' +
+									'		 <p class="list-content-title">' + data[i].title + '</p>' +
+									'		 <p class="list-content-subTitle">' + data[i].year +
+									'		  <span>|</span>' + data[i].km +
+									'		  <span>|</span>' + data[i].color +
+									'		 </p>' +
+									'		<p class="list-content-subTitle">车牌号：' + data[i].CarLicense + ' </p>' +
+									'		</div>' +
+									'      </a>' +
+									'    </div>';
+							}
+							$("#list").append(li);
+							listnum += num;
+						} else if (remainder != 0 && data_length - listnum == remainder) {
+							loading = true
+							for (i = listnum; i < (remainder + listnum); i++) {
+								li
+									+= '' +
+									'    <div class="bid-area-list" >' +
+									'      <div class="list-title">' +
+									'		<p>' +
+									'		  <span class="icon icon-68"></span>车辆所在地：' + data[i].city + (i + 1) +
+									'		</p>' +
+									'		<a href="javascript:;"><span class="color_price">' + data[i].money +
+									'		</span></a>' +
+									'	   </div>' +
+									'      <a href="detail.html" class="list-detail">' +
+									'		<div class="list-image">' +
+									'		 <img src="img/item_4.jpg" alt />' +
+									'		 <div class="list-licensedCity">' + data[i].status + '</div>' +
+									'		</div>' +
+									'		<div class="list-content">' +
+									'		 <p class="list-content-title">' + data[i].title + '</p>' +
+									'		 <p class="list-content-subTitle">' + data[i].year +
+									'		  <span>|</span>' + data[i].km +
+									'		  <span>|</span>' + data[i].color +
+									'		 </p>' +
+									'		<p class="list-content-subTitle">车牌号：' + data[i].CarLicense + ' </p>' +
+									'		</div>' +
+									'      </a>' +
+									'    </div>';
+							}
+							$("#list").append(li);
+							listnum += num;
+						} else {
+							loading = false
+							$('#loading').html("没有更多了哦~");
+						}
+					},
+					error: function() {
+						console.log("出错了");
+					}
+				});
+			}
+			//滚动加载
+			$(window).scroll(function() {
+				if ($(window).scrollTop() + $(window).height() - $(document).height() >= -1) {
+					if (!loading) {
+						$('#loading').html("没有更多了哦~");
+						return false;;
+					} else {
+						setTimeout(function() {
+							// 滚动加载
+							$('#loading').html("正在加载中···");
+							getList();
+							detailList.insertHtmlStr($("#list").html(), {
+								lastIndex: listnum
+							});
+						}, 1000);
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
